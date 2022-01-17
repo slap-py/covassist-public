@@ -1,0 +1,26 @@
+{% include "nav.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link the style.css file in static folder -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="one-of-two" style="background-color: #4b60b0;">
+            <h1 style="color: white; font-size: 75px;">COVASSIST</h1>
+            <h2 style="color: white; font-size: 25px;">Find Anything! From Hospitals to Vaccines!</h2>
+            <br>
+            <!-- <a href="/app" style="padding: 15px; background-color: white; border-radius: 25px; color: #4b60b0; text-decoration: none;">Start Now!</a> -->
+        </div>
+        <div class="one-of-two-img">
+          <img class="rotate linear infinite float" src="../static/hospital_picture.png">
+        </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Rajdhani:wght@500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
+}
+body,html{
+    width:100%;
+    height:100%;
+    background-color: lightgray;
+}
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+.one-of-two{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow: 5px 5px 5px 5px black;
+}
+.one-of-two-img{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    /* background-image: url("https://th.bing.com/th/id/R.00e069dd4a2da1b0f16a3c6c8e7f0cc9?rik=8sDkhwHD%2bQlxOA&riu=http%3a%2f%2fcdn7.dissolve.com%2fp%2fD2058_29_005%2fD2058_29_005_0004_600.jpg&ehk=ypreaEZ0Y1qjhBltYvKEH%2bM944gpZ%2b6QYBxbg3KVNyw%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    opacity: 90%;
+}
+img{
+    width: 625px;
+    height: 625px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes float {
+	0% {
+		transform: translatey(10px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(10px);
+	}
+}
+.rotate {
+  animation: rotation 220s;
+}
+.linear {
+  animation-timing-function: linear;
+}
+.infinite {
+  animation-iteration-count: infinite;
+}
+.float{
+    animation: float 6s ease-in-out infinite;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #324ab2;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  z-index: 1;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+
+li a:hover {
+  background-color: #293a50;
+  transition-duration: 0.25s;
+}

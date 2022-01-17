@@ -1,0 +1,38 @@
+{% include "nav.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link the style.css file in static folder -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>The Developers</h1>
+        <div class="whatBlock">
+            <img style="object-fit: cover;" class="whatImg" src="../static/slappy.jpg">
+            <span>
+                <!-- Name Goes Here -->
+                <h2>Kai</h2>
+                <!-- Desc Goes Here -->
+                <p class="outputCauses">I created the backend using Flask and Python, I also helped with creating the graphs using Chart.js.</p>
+            </span>
+        </div>
+        <div class="whatBlock">
+            <img style="object-fit: cover;" class="whatImg" src="../static/split.jpg">
+            <span>
+                <!-- Name Goes Here -->
+                <h2>Arnav</h2>
+                <!-- Desc Goes Here -->
+                <p class="outputCauses">I did the frontend and helped out with API Calls</p>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

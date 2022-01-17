@@ -1,0 +1,77 @@
+{% include "nav.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link the style.css file in static folder -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='info.css') }}">
+    <script src="{{ url_for('static',filename='vaxinfo.js') }}"></script>
+    <title></title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <a style="padding: 10px; background-color: white; border: 1px solid black; text-decoration: none; color: black;" href="/app">Go Back</a>
+    <div class="container">
+        <div class="app" style="width: 50%;">
+            <center><h1 id="Name">{{name}}</h1></center>
+            <center><img id="Image" style="width: 650px; height: 300px; border-radius: 15px; border: 1px solid black;" src="/streetview/{{address}}"></center>
+            <hr style="width: 100%; margin-bottom: 5px;">
+            <h1>Location Information</h1>
+            <h2 id="Address">Address: {{address}} {{city}} {{state}}</h2>
+            <a target="_blank" href="" id="directions"><h2 id="Directions">Get Directions</h2></a>
+            <h2 id="Vaccines">Vaccines Provided: {{vaxtypes}}</h2>
+            <br>
+            <h1>Additional Information</h1>
+            <h2>Walk-ins Accepted: {{walkins}}</h2>
+            <h2>Provider Information: {{providInfo}}</h2>
+            <a target="_blank" href = '{{providWebsite}}' ><h2>Provider Website</h2></a>
+            <a target="_blank" href = '{{prescreen}}' ><h2>Check for appointments</h2></a>
+            <br>
+            <h1>Location Hours</h1>
+            <h2>Sunday: {{sunhrs}}</h2>
+            <h2>Monday: {{monhrs}}</h2>
+            <h2>Tuesday: {{tueshrs}}</h2>
+            <h2>Wednesday: {{wedhrs}}</h2>
+            <h2>Thursday: {{thurshrs}}</h2>
+            <h2>Friday: {{frihrs}}</h2>
+            <h2>Saturday: {{sathrs}}</h2>
+
+            <strong><p>* This data is provided and managed by the US Census Bureau, any lapses in data are due to the location not providing the data to the US Census Bureau.</p></strong>
+
+        </div>
+    </div>
+</body>
+<!-- <script src="{{ url_for('static', filename='city.js') }}" type="text/javascript"></script> -->
+<script>
+    function getLocation() {
+        //Check if Geolocation is supported 
+        if (navigator.geolocation) {
+            //If supported, run the getCurrentPosition() method
+            //If the getCurrentPosition() method is successful, it returns a coordinates object to the function specified in the parameter (showPosition)
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            //If not, display a message to the user
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    //The showPosition() function outputs the Latitude and Longitude
+    function showPosition(position) {
+        var a = document.getElementById("directions")
+        a.href = `https://www.google.com/maps/dir/${position.coords.latitude},${position.coords.longitude}/{{latitude}},{{longitude}}`
+    }
+    getLocation();
+
+    xmlHttpReq = new XMLHttpRequest();
+    xmlHttpReq.open("GET", "", false);
+    xmlHttpReq.send(null);
+    image = parseInt(xmlHttpReq.responseText);
+</script>
+</html>
+{% endblock %}

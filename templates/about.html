@@ -1,0 +1,43 @@
+{% include "nav.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link the style.css file in static folder -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='app.css') }}">
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>About The Project</h1>
+        <hr style="width: 50%; border: 1px solid black;">
+        <br>
+        <p></p>
+        <h2>Sources</h2>
+        <!-- 
+            Google: Street view, map
+            CovidActNow: Case count, death count, vaccination counts
+            US Census: Vaccination location data
+            LocationIQ: Geocoding for city'
+         -->
+        <ol style="width: 30%;">
+            <h3><li>Google: Street view to view the vaccination location from the street, and the JS Map API to allow the user to visualise vaccination locations nearby.</li></h3>
+            <h3><li>CovidActNow: Current and historical case and death counts, as well as current and historical vaccination counts.</li></h3>
+            <h3><li>US Census: Data about vaccination locations.</li></h3>
+        </ol>
+        <h2>Backend</h2>
+        <ol style="width: 30%;">
+            <h3><li>Flask Framework, Flask API</li></h3>
+            <h3><li>Flask framework to host the API and website</li></h3>
+            <h3><li>Python Requests Module</li></h3>
+            <h3><li>Requests module to get the data to forward into our API</li></h3>
+        </ol>
+    </div>
+</body>
+
+</html>
+{% endblock %}
